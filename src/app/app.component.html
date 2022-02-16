@@ -1,0 +1,137 @@
+<div class="container p-5">
+  <div class="row align-items-start">
+    <div class="col p-5">
+      <p class="col-sm-3 col-form-label text-center">FORMULARIO</p>
+      <form [formGroup]="form1" (ngSubmit)="crearPersona()">
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="IdPersona"
+                formControlName="IdPersona"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Documento"
+                formControlName="Documento"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Nombres"
+                formControlName="Nombres"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Apellidos"
+                formControlName="Apellidos"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Telefono"
+                formControlName="Telefono"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Correo"
+                formControlName="Correo"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-sm-9">
+            <div class="input-group mb-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Direccion"
+                formControlName="Direccion"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="form1.invalid && formularioEnviado">
+          Error en el formulario
+        </div>
+        <button
+          class="btn btn-outline-primary mx-auto"
+          type="submit"
+          
+        >
+          Crear
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="row align-items-start" *ngIf="data.length > 0">
+    <p>Ultimos Post</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">IdPersona</th>
+          <th scope="col">Documento</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Direccion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of data">
+          <td>{{ persona.IdPersona }}</td>
+          <td>{{ persona.Documento }}</td>
+          <td>{{ persona.Nombres }}</td>
+          <td>{{ persona.Apellidos }}</td>
+          <td>{{ persona.Telefono }}</td>
+          <td>{{ persona.Correo }}</td>
+          <td>{{ persona.Direccion }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
